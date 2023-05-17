@@ -1,20 +1,30 @@
 package com.orden.service.orden_service.persistence.Entities;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "tbl_ordenes")
 public class Orden {
     @Id
-    @Column(name = "idOrden")
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idorden;
+    private int idOrden;
 
-    @Column(name = "N_Orden")
-    private String n_orden;
+    @Column
+    private String N_Orden;
 
 
     @ManyToOne
-    @JoinColumn(name = "IdEmpleado")
-    private tbl_empleado idempleado;
+    @JoinColumn
+    private Employees IdEmpleado;
+
+    //IdTipoServicio
+
+    @ManyToOne
+    @JoinColumn
+    private  OrderType Descripcion;
 }
