@@ -4,10 +4,12 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "tbl_ordenes")
+///Entidad de orden que recibe datos de la base de datos.
 public class Orden {
     @Id
     @Column
@@ -20,11 +22,11 @@ public class Orden {
 
     @ManyToOne
     @JoinColumn
-    private Employees IdEmpleado;
+    private Employee IdEmpleado;
 
-    //IdTipoServicio
 
     @ManyToOne
     @JoinColumn
     private  OrderType Descripcion;
+
 }

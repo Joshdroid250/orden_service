@@ -10,14 +10,14 @@ import java.util.Date;
 @Getter
 @Setter
 @Table(name = "tbl_empleado")
-public class Employees {
+public class Employee {
     @Id
-    @Column(name = "IdEmpleado")
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idempleado;
+    private int IdEmpleado;
 
     @ManyToOne
-    @JoinColumn(name = "IdProfesiones")
+    @JoinColumn
     private Profession IdProfesiones;
 
     @Column

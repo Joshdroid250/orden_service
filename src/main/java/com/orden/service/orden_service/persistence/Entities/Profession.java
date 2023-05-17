@@ -10,14 +10,14 @@ import lombok.Setter;
 @Table(name = "tbl_cat_profesiones")
 public class Profession {
     @Id
-    @Column(name = "IdProfesiones")
+    @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idProfesiones;
+    private int IdProfesiones;
 
 
-    @Column(name = "Descripcion", length = 50)
-    private String descripcion;
+    @Column
+    private String Descripcion;
 
-    @Column(name = "Estado")
-    private int estado;
+    @Column
+    private int Estado;
 }
