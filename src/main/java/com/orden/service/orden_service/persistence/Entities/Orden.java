@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
+
 
 @Entity
 @AllArgsConstructor
@@ -14,19 +16,55 @@ public class Orden {
     @Id
     @Column
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int idOrden;
+    private int IdOrden;
 
     @Column
     private String N_Orden;
-
 
     @ManyToOne
     @JoinColumn
     private Employee IdEmpleado;
 
+    @ManyToOne
+    @JoinColumn
+    private Patients IdPaciente;
 
     @ManyToOne
     @JoinColumn
-    private  OrderType Descripcion;
+    private ServiceType IdTipoServicio;
 
+    @ManyToOne
+    @JoinColumn
+    private OrderType IdTipoOrden;
+
+    @Column
+    private String Asistencia;
+
+    @Column
+    private String Observaciones;
+
+    @Column
+    private Date FechaOrden;
+
+    @Column
+    private String Activo;
+
+    @Column
+    private Date FechaImprime;
+
+    @ManyToOne
+    @JoinColumn
+    private UserPrint IdUsuario;
+
+    @Column
+    private int Estado;
+
+    @Column
+    private String Finalizado;
+
+    @Column
+    private Date FechaCita;
+
+    @Column
+    private Date FechaPReporte;
 }

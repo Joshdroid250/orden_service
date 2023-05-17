@@ -103,9 +103,4 @@ public class Patients {
 
     @Column
     private int Estado;
-
-
-
-    // Constructor, getters, and setters
-    // ...
 }
